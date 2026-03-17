@@ -1,9 +1,10 @@
 import { CategoriesDropdown } from "@/components/categories-dropdown";
 import { Joke } from "@/components/joke";
+import { ThemeToggler } from "@/components/theme-toggler";
 import { CategoryOptions } from "@/constants/category-options";
 import { JokeCategories } from "@/enums/jokes";
 import useFetchJoke from "@/hooks/use-fetch-joke";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ActivityIndicator, Pressable, ScrollView, Text, View } from "react-native";
 
 export default function HomeScreen() {
@@ -12,6 +13,11 @@ export default function HomeScreen() {
 	);
 
 	const { data, status, isRefetching, refetch } = useFetchJoke(category.value);
+
+	useEffect(() => {
+		refetch();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [category]);
 
 	function renderData() {
 		switch (status) {
@@ -44,13 +50,15 @@ export default function HomeScreen() {
 	}
 
 	return (
-		<ScrollView
-			className="flex-1 bg-surface pt-safe-offset-0"
-			contentContainerClassName="grow py-6 px-4"
-		>
-			<CategoriesDropdown category={category} setCategory={setCategory} />
-
-			{renderData()}
-		</ScrollView>
+		<View className="flex-1 bg-surface">
+			<ScrollView
+				className="flex-1 pt-safe-offset-0 relative"
+				contentContainerClassName="grow py-6 px-4"
+			>
+				<CategoriesDropdown category={category} setCategory={setCategory} />
+				{renderData()}
+			</ScrollView>
+			<ThemeToggler />
+		</View>
 	);
 }

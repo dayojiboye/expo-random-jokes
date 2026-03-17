@@ -31,7 +31,7 @@ export function CategoriesDropdown({ category, setCategory }: CategoriesDropdown
 			</Select.Trigger>
 			<Select.Portal>
 				<Select.Overlay />
-				<Select.Content presentation="popover" width="trigger" className="rounded-none">
+				<Select.Content presentation="popover" width="trigger" className="rounded-none bg-surface">
 					{CategoryOptions.map((c) => (
 						<Select.Item key={c.value} value={c.value} label={c.label} className="py-2 px-1">
 							{({ isSelected }) => (

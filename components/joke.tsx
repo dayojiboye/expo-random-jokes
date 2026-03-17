@@ -17,10 +17,10 @@ export function Joke({ joke, onGetMoreJokes }: JokeProps) {
 					)}
 				/>
 				<View className="w-full p-4 rounded-md border border-border relative z-2 bg-surface min-h-[200px] items-center justify-center gap-6">
-					<Text className="text-base text-center">{joke}</Text>
+					<Text className="text-base text-center text-foreground">{joke}</Text>
 					<Button
 						onPress={onGetMoreJokes}
-						className="rounded-none bg-primary w-[150px]"
+						className="rounded-none bg-primary w-[150px] border border-primary dark:border-border"
 						animation={{
 							scale: { value: 0.97 },
 							highlight: {

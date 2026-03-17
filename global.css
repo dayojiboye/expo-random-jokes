@@ -104,10 +104,10 @@
 			/* Base Colors */
 			--background: oklch(12% 0.005 285.823);
 			--foreground: var(--snow);
-			--primary: oklch(0.4455 0.0374 257.28);
+			--primary: oklch(0.2735 0.0179 251.92);
 
 			/* Surface: Used for non-overlay components (cards, accordions, disclosure groups) */
-			--surface: oklch(0.2103 0.0059 285.89);
+			--surface: oklch(0.1763 0.014 258.36);
 			--surface-foreground: var(--foreground);
 
 			--surface-secondary: oklch(0.257 0.0037 286.14);
@@ -149,7 +149,7 @@
 			--segment-foreground: var(--foreground);
 
 			/* Misc Colors */
-			--border: oklch(28% 0.006 286.033);
+			--border: oklch(0.3837 0.0179 254.74);
 			--separator: oklch(40% 0.006 286.033);
 			--focus: var(--accent);
 			--link: var(--foreground);
