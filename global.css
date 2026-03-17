@@ -28,12 +28,17 @@
 	--opacity-disabled: 0.5;
 }
 
+@theme inline {
+	--color-primary: var(--primary);
+}
+
 @layer theme {
 	:root {
 		@variant light {
 			/* Base Colors */
 			--background: oklch(0.9702 0 0);
 			--foreground: var(--eclipse);
+			--primary: oklch(0.4455 0.0374 257.28);
 
 			/* Surface: Used for non-overlay components (cards, accordions, disclosure groups) */
 			--surface: var(--white);
@@ -78,7 +83,7 @@
 			--segment-foreground: var(--eclipse);
 
 			/* Misc Colors */
-			--border: oklch(90% 0.004 286.32);
+			--border: oklch(0.9288 0.0126 255.51);
 			--separator: oklch(74% 0.004 286.32);
 			--focus: var(--accent);
 			--link: var(--foreground);
@@ -99,6 +104,7 @@
 			/* Base Colors */
 			--background: oklch(12% 0.005 285.823);
 			--foreground: var(--snow);
+			--primary: oklch(0.4455 0.0374 257.28);
 
 			/* Surface: Used for non-overlay components (cards, accordions, disclosure groups) */
 			--surface: oklch(0.2103 0.0059 285.89);
