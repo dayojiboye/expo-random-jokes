@@ -9,7 +9,7 @@ export default function useFetchJoke(category: JokeCategories) {
 	const { toast } = useToast();
 
 	return useQuery({
-		queryKey: ["get_joke"],
+		queryKey: ["get_joke", category],
 		queryFn: async function (): Promise<Joke> {
 			try {
 				const response = await axios.get(

@@ -4,7 +4,7 @@ import { ThemeToggler } from "@/components/theme-toggler";
 import { CategoryOptions } from "@/constants/category-options";
 import { JokeCategories } from "@/enums/jokes";
 import useFetchJoke from "@/hooks/use-fetch-joke";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ActivityIndicator, Pressable, ScrollView, Text, View } from "react-native";
 
 export default function HomeScreen() {
@@ -13,11 +13,6 @@ export default function HomeScreen() {
 	);
 
 	const { data, status, isRefetching, refetch } = useFetchJoke(category.value);
-
-	useEffect(() => {
-		refetch();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [category]);
 
 	function renderData() {
 		switch (status) {
